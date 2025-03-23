@@ -56,20 +56,22 @@ window.addEventListener("scroll", function () {
 });
 
 // Música de fundo
-const music = document.getElementById("background-music");
-const musicToggle = document.getElementById("music-toggle");
-let isPlaying = false;
-
-musicToggle.addEventListener("click", function () {
-    if (isPlaying) {
-        music.pause();
-        musicToggle.textContent = "🎵 Tocar Música";
-    } else {
-        music.play();
-        musicToggle.textContent = "🔇 Pausar Música";
-    }
-    isPlaying = !isPlaying;
-});
+    window.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById("background-music");
+    const musicToggle = document.getElementById("music-toggle");
+    let isPlaying = false;
+  
+    musicToggle.addEventListener("click", function () {
+      if (isPlaying) {
+          music.pause();
+          musicToggle.textContent = "🎵 Tocar Música";
+      } else {
+          music.play();
+          musicToggle.textContent = "🔇 Pausar Música";
+      }
+      isPlaying = !isPlaying;
+    });
+  });
 
 // Interação com mapa
 document.querySelectorAll(".map-point").forEach(point => {
