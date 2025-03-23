@@ -1,0 +1,102 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhyndor - O Universo Ilustrado</title>
+    <meta name="description" content="Zhyndor é um universo mágico com ilustrações, histórias e personagens encantadores. Explore um site imersivo com animações e efeitos mágicos.">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header id="main-header">
+        <h1 class="glowing-text">ZHYNDOR</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#sobre" title="Ir para a seção Sobre">Sobre</a></li>
+                <li><a href="#mundo" title="Conheça o mundo de Zhyndor">O Mundo</a></li>
+                <li><a href="#galeria" title="Veja a galeria ilustrada">Galeria</a></li>
+                <li><a href="#contato" title="Entre em contato conosco">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero">
+            <div class="parallax" id="layer1"></div>
+            <div class="parallax" id="layer2"></div>
+            <div class="parallax" id="layer3"></div>
+            <h2 id="dynamic-text"></h2>
+            <p>Um universo de magia, mistérios e ilustrações fantásticas.</p>
+            <a href="#sobre" class="btn" title="Explorar o universo de Zhyndor">Explorar</a>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre o Livro</h2>
+            <p>Zhyndor é uma obra épica que transporta os leitores para um mundo mágico.</p>
+            <p><strong>Zhyndor</strong> não é apenas um livro. É um portal para um universo mágico, onde a luz e as trevas travam batalhas há milênios, e heróis nascem de sacrifícios, escolhas e profecias antigas.</p>
+            <div>    
+            <p>Nesta coletânea ilustrada, você será transportado para um mundo onde:</p>
+            <p>Florestas falam, revelando o passado e o futuro a quem ouve com o coração;</p>
+            <p>Ruínas tecnológicas escondem civilizações inteiras que desafiaram o tempo;</p>
+            <p>Oceano e céu se unem em danças mágicas conduzidas por guardiões lendários.</p>
+            </div> 
+
+
+        </section>
+
+        <section id="mundo">
+            <h2 class="shadow-effect">O Mundo de Zhyndor</h2>
+            <p>Descubra as terras, personagens e lendas desse universo incrível.</p>
+
+            <div class="map-container">
+                <img src="./assets/img/mapa.jpg" alt="Mapa de Zhyndor" class="map">
+                <div class="map-point" style="top: 30%; left: 40%;" data-info="Cidade de Eldoria - Capital do reino."></div>
+                <div class="map-point" style="top: 60%; left: 70%;" data-info="Floresta dos Ancestrais - Lar de criaturas místicas."></div>
+            </div>
+            <div id="map-info"></div>
+            
+        </section>
+
+        <section id="galeria">
+            <h2>Galeria Ilustrada</h2>
+            <p>Veja as incríveis artes inspiradas no livro.</p>
+            <div class="gallery-container">
+                <div class="gallery">
+                    <img src="./assets/img/img1.jpg" alt="Arte 1">
+                    <img src="./assets/img/img2.jpg" alt="Arte 2">
+                    <img src="./assets/img/img3.jpg" alt="Arte 3">
+                    <img src="./assets/img/img4.jpg" alt="Arte 4">
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato para saber mais sobre o projeto.</p>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2025 Zhyndor - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <audio id="background-music" loop>
+        <source src="./assets/audio/trilha-sonora.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle">🎵 Tocar Música</button>    
+
+    <div class="fog-container">
+        <div class="fog-layer fog-layer1"></div>
+        <div class="fog-layer fog-layer2"></div>
+    </div>
+    
+</body>
+</html>

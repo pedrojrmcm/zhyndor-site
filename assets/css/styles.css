@@ -1,0 +1,323 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    cursor: url('../img/cursor-magico.png'), auto;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+nav ul li a {
+    color: #f0d878;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-shadow: 0px 0px 10px #f0d878;
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    overflow: hidden;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+
+.parallax {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+/*
+#layer1 {
+    background-image: url('../img/fundo-estrelado.jpg');
+    z-index: 1;
+}
+
+#layer2 {
+    background-image: url('../img/nebulosa.png');
+    z-index: 2;
+    opacity: 0.7;
+}*/
+
+#layer3 {
+    background-image: url('../img/portal-luminoso.png');
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    position: fixed; /* Fixa o elemento na tela, mesmo ao rolar */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% da largura da viewport */
+    height: 100vh; /* 100% da altura da viewport */
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none; /* Permite interação com elementos abaixo da camada */
+}
+
+.btn {
+    background: linear-gradient(45deg, #f0d878, #ffae00);
+    color: #0a0a0a;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(240, 216, 120, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 10%, transparent 60%);
+    transition: 0.4s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgba(240, 216, 120, 1);
+}
+
+.glowing-text {
+    animation: glowEffect 3s infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% { text-shadow: 0 0 5px gold; }
+    50% { text-shadow: 0 0 15px gold; }
+    100% { text-shadow: 0 0 5px gold; }
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: transparent;
+}
+
+section {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: auto;
+} 
+
+footer {
+    background-color: #111;
+    padding: 30px;
+    font-size: 1rem;
+    color: #ccc;
+} 
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+} 
+
+#main-header.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+#music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(240, 216, 120, 0.8);
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.2s ease-in-out;
+    z-index: 1001;
+}
+
+#music-toggle:hover {
+    transform: scale(1.1);
+}
+
+.gallery-container {
+    perspective: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-top: 40px;
+}
+
+.gallery {
+    position: relative;
+    width: 300px;
+    transform-style: preserve-3d;
+    animation: rotateGallery 10s infinite linear;
+}
+
+.gallery img {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform-origin: center center;
+}
+
+.gallery img:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.gallery img:nth-child(2) { transform: rotateY(90deg) translateZ(300px); }
+.gallery img:nth-child(3) { transform: rotateY(180deg) translateZ(300px); }
+.gallery img:nth-child(4) { transform: rotateY(270deg) translateZ(300px); }
+
+@keyframes rotateGallery {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+.map {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.map-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.map-point:hover {
+    transform: scale(1.5);
+    box-shadow: 0px 0px 10px gold;
+}
+
+#map-info {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.fog-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.fog-layer {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('../img/fog.png') repeat-x;
+    background-size: cover;
+    opacity: 0.5;
+    animation: moveFog 60s linear infinite;
+}
+
+.fog-layer1 {
+    animation-duration: 80s;
+}
+
+.fog-layer2 {
+    animation-duration: 120s;
+    opacity: 0.2;
+}
+
+@keyframes moveFog {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+:root {
+    --shadowX: 0px;
+    --shadowY: 0px;
+}
+
+.shadow-effect {
+    text-shadow: var(--shadowX) var(--shadowY) 10px rgba(0, 0, 0, 0.5);
+    transition: text-shadow 0.1s ease-out;
+}
+
+.contato {
+    width: 20px;
+    height: 20px;
+    padding-top: 100%;
+}
+
